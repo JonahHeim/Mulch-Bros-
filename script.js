@@ -1,5 +1,5 @@
 /**
- * Milford Mulch Solutions - Premium Scroll Effects & Interactions
+ * Mulch Bros - Premium Scroll Effects & Interactions
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -377,5 +377,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, 100);
 
-    console.log('Milford Mulch Solutions - Scripts Loaded');
+    console.log('Mulch Bros - Scripts Loaded');
 });
