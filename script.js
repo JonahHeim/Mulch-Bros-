@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== SCROLL REVEAL ANIMATIONS =====
     const revealElements = document.querySelectorAll(
-        '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale'
+        '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-top, .scroll-reveal-scale'
     );
 
     const revealOptions = {
@@ -362,6 +362,100 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+    // ===== HERO SLIDESHOW =====
+    const slideshow = document.querySelector('.hero-slideshow');
+
+    if (slideshow) {
+        const slides = slideshow.querySelectorAll('.slide');
+        const dots = slideshow.querySelectorAll('.dot');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+
+            currentSlide = index;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        // Auto-advance every 2 seconds
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 2000);
+        }
+
+        // Click on dots to navigate
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                goToSlide(index);
+                startSlideshow();
+            });
+        });
+
+        startSlideshow();
+    }
+
+
+    // ===== LOGO SPIN ON LOAD =====
+    const logoImg = document.querySelector('.logo-img');
+    if (logoImg) {
+        logoImg.classList.add('spin-in');
+        setTimeout(() => {
+            logoImg.classList.remove('spin-in');
+        }, 800);
+    }
+
+
+    // ===== FEATURE CHECKMARKS POP ANIMATION =====
+    const featureLists = document.querySelectorAll('.feature-list');
+
+    featureLists.forEach(list => {
+        const checkmarks = list.querySelectorAll('.feature-check');
+
+        const checkmarkObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    checkmarks.forEach((check, index) => {
+                        setTimeout(() => {
+                            check.classList.add('popped');
+                        }, index * 150); // 150ms delay between each
+                    });
+                    checkmarkObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        checkmarkObserver.observe(list);
+    });
+
+
+    // ===== FLOATING CTA BUTTON (MOBILE) =====
+    const floatingCta = document.querySelector('.floating-cta');
+
+    function handleFloatingCta() {
+        if (!floatingCta) return;
+
+        const scrollY = window.pageYOffset;
+
+        if (scrollY > 300) {
+            floatingCta.classList.add('visible');
+        } else {
+            floatingCta.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', handleFloatingCta, { passive: true });
+
+
     // ===== INITIALIZE =====
     // Run initial checks
     handleNavbarScroll();
@@ -376,6 +470,55 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, 100);
+
+    // ===== PAGE TRANSITION EFFECT =====
+    const pageTransition = document.querySelector('.page-transition');
+
+    // Handle page entry - slide the overlay out
+    if (pageTransition) {
+        // Check if we came from another page (sessionStorage flag)
+        if (sessionStorage.getItem('pageTransition') === 'true') {
+            sessionStorage.removeItem('pageTransition');
+            // Small delay then start exit animation
+            setTimeout(() => {
+                document.documentElement.classList.remove('page-entering');
+                pageTransition.classList.add('exit');
+            }, 50);
+        }
+    }
+
+    // Handle navigation links
+    const internalLinks = document.querySelectorAll('a[href$=".html"]:not([target="_blank"])');
+
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            // Skip if it's the current page
+            if (href === window.location.pathname.split('/').pop()) {
+                return;
+            }
+
+            e.preventDefault();
+
+            if (pageTransition) {
+                // Set flag for the next page
+                sessionStorage.setItem('pageTransition', 'true');
+
+                // Trigger the slide up animation
+                pageTransition.classList.remove('exit');
+                pageTransition.classList.remove('ready');
+                pageTransition.classList.add('active');
+
+                // Navigate after animation completes
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
+            } else {
+                window.location.href = href;
+            }
+        });
+    });
 
     console.log('Mulch Bros - Scripts Loaded');
 });
