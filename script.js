@@ -189,6 +189,40 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+    // ===== GOALS COUNT-UP ANIMATION =====
+    const countUpElements = document.querySelectorAll('.count-up');
+
+    if (countUpElements.length > 0) {
+        const countUpObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const target = parseInt(element.dataset.target);
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+
+                    const counter = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            element.innerText = target.toLocaleString();
+                            clearInterval(counter);
+                        } else {
+                            element.innerText = Math.floor(current).toLocaleString();
+                        }
+                    }, 16);
+
+                    countUpObserver.unobserve(element);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        countUpElements.forEach(element => {
+            countUpObserver.observe(element);
+        });
+    }
+
+
     // ===== TESTIMONIAL CARD SUBTLE ANIMATION =====
     const testimonialCard = document.querySelector('.testimonial-card');
 
