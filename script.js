@@ -330,26 +330,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
 
-    // ===== LAZY LOADING FOR IMAGES =====
-    const lazyImages = document.querySelectorAll('img[data-src]');
-
-    if (lazyImages.length > 0) {
-        const imageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    img.classList.add('loaded');
-                    observer.unobserve(img);
-                }
-            });
-        }, { rootMargin: '50px 0px' });
-
-        lazyImages.forEach(img => {
-            imageObserver.observe(img);
-        });
-    }
+    // ===== EAGER IMAGE LOADING =====
+    // All images load immediately via preload tags in HTML head
+    // No lazy loading - ensures smooth scrolling without image pop-in
 
 
     // ===== PRICING CARD HOVER EFFECTS =====
