@@ -1175,6 +1175,20 @@ section.cta-section {
     margin-bottom: 0;
 }
 
+.team-card .team-bio {
+    font-size: 0.85rem;
+    color: var(--charcoal-light);
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.team-card .team-funfact {
+    font-size: 0.8rem;
+    color: var(--primary-orange);
+    font-style: italic;
+    margin-top: 4px;
+}
+
 /* Values Section */
 .values-grid {
     display: flex;
