@@ -682,7 +682,7 @@ section.cta-section {
 
 /* ===== PROCESS CARDS OVERRIDE ===== */
 .process-card {
-    background: #ffffff;
+    background: var(--pebble);
     border: 2px solid var(--mario-pipe);
     box-shadow: 0 4px 16px rgba(0, 222, 131, 0.15);
     color: var(--stone);
@@ -701,7 +701,7 @@ section.cta-section {
 }
 
 .process-icon {
-    background: #ffffff;
+    background: var(--pebble);
     border: 2px solid var(--mario-pipe);
     color: var(--mario-pipe);
 }
