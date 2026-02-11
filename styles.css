@@ -680,6 +680,37 @@ section.cta-section {
     margin-bottom: 0;
 }
 
+/* ===== PROCESS CARDS OVERRIDE ===== */
+.process-card {
+    background: #ffffff;
+    border: 2px solid var(--mario-pipe);
+    box-shadow: 0 4px 16px rgba(0, 222, 131, 0.15);
+    color: var(--stone);
+}
+
+.process-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 222, 131, 0.25);
+}
+
+.process-card h3 {
+    color: var(--stone);
+}
+
+.process-card p {
+    color: var(--charcoal-light);
+}
+
+.process-icon {
+    background: #ffffff;
+    border: 2px solid var(--mario-pipe);
+    color: var(--mario-pipe);
+}
+
+.process-card:hover .process-icon {
+    background: var(--mario-pipe);
+    color: #ffffff;
+}
+
 /* ===== FEATURES SECTION ===== */
 .features-grid {
     display: grid;
