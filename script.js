@@ -422,6 +422,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+    // ===== SERVICE DETAIL SLIDESHOWS =====
+    const serviceSlideshows = document.querySelectorAll('.service-slideshow');
+
+    serviceSlideshows.forEach((slideshow, slideshowIndex) => {
+        const slides = slideshow.querySelectorAll('.service-slide');
+        if (slides.length <= 1) return;
+
+        let currentSlide = 0;
+
+        function nextServiceSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Stagger the start times so they don't all change at once
+        const delay = slideshowIndex * 800;
+        setTimeout(() => {
+            setInterval(nextServiceSlide, 3000);
+        }, delay);
+    });
+
+
     // ===== LOGO SPIN ON LOAD =====
     const logoImg = document.querySelector('.logo-img');
     if (logoImg) {

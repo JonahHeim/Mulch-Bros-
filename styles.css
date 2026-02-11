@@ -1230,6 +1230,81 @@ section.cta-section {
 }
 
 /* ===== SERVICES PAGE STYLES ===== */
+.services-hero-photo {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background-image: url('slide-house.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.services-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(31, 31, 31, 0.75) 0%, rgba(31, 31, 31, 0.55) 100%);
+    z-index: 1;
+}
+
+.services-hero-photo .container {
+    position: relative;
+    z-index: 2;
+}
+
+.services-hero-text {
+    max-width: 700px;
+    text-align: left;
+}
+
+.services-hero-text h1 {
+    color: var(--cream);
+    margin-bottom: 20px;
+}
+
+.services-hero-text p {
+    font-size: 1.25rem;
+    color: rgba(252, 247, 228, 0.85);
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+/* Service Section Slideshows */
+.service-slideshow {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+}
+
+.service-slideshow-slides {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+}
+
+.service-slideshow-slides .service-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.service-slideshow-slides .service-slide.active {
+    opacity: 1;
+}
+
+/* Legacy .services-hero kept for compatibility */
 .services-hero {
     padding-top: 140px;
     padding-bottom: 80px;
@@ -1811,6 +1886,16 @@ section.cta-section {
 
     .values-grid {
         grid-template-columns: 1fr;
+    }
+
+    .services-hero-photo {
+        min-height: 60vh;
+        background-attachment: scroll;
+        text-align: center;
+    }
+
+    .services-hero-text {
+        text-align: center;
     }
 }
 

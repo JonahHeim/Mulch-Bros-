@@ -6,7 +6,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-STNFH3HN6C"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-STNFH3HN6C');
     </script>
@@ -22,7 +22,10 @@
     <!-- Preload images for instant loading -->
     <link rel="preload" as="image" href="logo-horizontal.png">
     <link rel="preload" as="image" href="mascot.png">
+    <link rel="preload" as="image" href="slide-house.jpg">
+    <link rel="preload" as="image" href="IMG_2378.jpg">
     <link rel="preload" as="image" href="services-hero.jpg">
+    <link rel="preload" as="image" href="work-1.jpeg">
     <link rel="preload" as="image" href="work-2.jpeg">
     <link rel="preload" as="image" href="work-3.jpeg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -61,7 +64,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="nav-cta">Free Quote</a></li>
+                <li><a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="nav-cta">Free
+                        Quote</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -72,36 +76,16 @@
     </nav>
 
     <!-- Services Hero -->
-    <section class="services-hero">
+    <section class="services-hero-photo">
+        <div class="services-hero-overlay"></div>
         <div class="container">
-            <div>
-                <span class="section-label">Our Services</span>
+            <div class="services-hero-text">
+                <span class="section-label" style="color: var(--mario-pipe);">Our Services</span>
                 <h1>Professional <span style="color: var(--primary-orange);">Landscaping</span> Services</h1>
                 <p>Quality work, honest pricing, and a team that treats your yard like their own. Let us handle the hard
                     work while you enjoy the results.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Overview Cards -->
-    <section class="section-light">
-        <div class="container">
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🌿</div>
-                    <h3>Mulch Installation</h3>
-                    <p>Premium mulch delivered and professionally spread with clean edges and proper depth.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌳</div>
-                    <h3>Bush Trimming</h3>
-                    <p>Professional trimming and shaping to keep your shrubs healthy and attractive.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✂️</div>
-                    <h3>Bed Maintenance</h3>
-                    <p>Weeding and edging that keeps your landscape beds pristine.</p>
-                </div>
+                <a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB"
+                    class="btn btn-primary">Get a Free Quote</a>
             </div>
         </div>
     </section>
@@ -111,8 +95,15 @@
         <div class="container">
             <div class="service-detail">
                 <div class="service-detail-image scroll-reveal-left">
-                    <img src="services-hero.jpg" alt="Professional mulch installation"
-                        style="width: 100%; border-radius: 12px;">
+                    <div class="service-slideshow">
+                        <div class="service-slideshow-slides">
+                            <img src="IMG_2378.jpg" alt="Professional mulch installation" class="service-slide active">
+                            <img src="services-hero.jpg" alt="Mulch bed landscaping" class="service-slide">
+                            <img src="IMG_9953.jpeg" alt="Mulch installation work" class="service-slide">
+                            <img src="slide-house.jpg" alt="Landscaped home" class="service-slide">
+                            <img src="work-1.jpeg" alt="Mulch work in progress" class="service-slide">
+                        </div>
+                    </div>
                 </div>
                 <div class="service-detail-content scroll-reveal-right">
                     <span class="section-label">Featured Service</span>
@@ -139,7 +130,15 @@
         <div class="container">
             <div class="service-detail reverse">
                 <div class="service-detail-image scroll-reveal-right">
-                    <img src="work-2.jpeg" alt="Professional bush trimming" style="width: 100%; border-radius: 12px;">
+                    <div class="service-slideshow">
+                        <div class="service-slideshow-slides">
+                            <img src="work-2.jpeg" alt="Professional bush trimming" class="service-slide active">
+                            <img src="IMG_9557.JPG" alt="Bush trimming work" class="service-slide">
+                            <img src="IMG_9554 - Copy.JPG" alt="Trimming service" class="service-slide">
+                            <img src="IMG_2378.jpg" alt="Landscaping result" class="service-slide">
+                            <img src="slide-house.jpg" alt="Beautiful landscaped home" class="service-slide">
+                        </div>
+                    </div>
                 </div>
                 <div class="service-detail-content scroll-reveal-left">
                     <span class="section-label">Expert Care</span>
@@ -164,8 +163,15 @@
         <div class="container">
             <div class="service-detail">
                 <div class="service-detail-image scroll-reveal-left">
-                    <img src="work-3.jpeg" alt="Well-maintained mulch bed with hostas"
-                        style="width: 100%; border-radius: 12px;">
+                    <div class="service-slideshow">
+                        <div class="service-slideshow-slides">
+                            <img src="work-3.jpeg" alt="Well-maintained mulch bed" class="service-slide active">
+                            <img src="work-1.jpeg" alt="Mulch bed maintenance" class="service-slide">
+                            <img src="services-hero.jpg" alt="Clean mulch bed" class="service-slide">
+                            <img src="IMG_9953.jpeg" alt="Bed maintenance work" class="service-slide">
+                            <img src="IMG_9557.JPG" alt="Maintained landscape" class="service-slide">
+                        </div>
+                    </div>
                 </div>
                 <div class="service-detail-content scroll-reveal-right">
                     <span class="section-label">Ongoing Care</span>
@@ -376,13 +382,15 @@
                     <h4>Contact Us</h4>
                     <p>Milford, Michigan</p>
                     <p><a href="tel:2626137406" style="color: inherit;">(262) 613-7406</a></p>
-                    <p><a href="mailto:james.valentine@mulchbros.org" style="color: inherit;">james.valentine@mulchbros.org</a></p>
+                    <p><a href="mailto:james.valentine@mulchbros.org"
+                            style="color: inherit;">james.valentine@mulchbros.org</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Mulch Bros. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="https://www.facebook.com/profile.php?id=61586824342145" aria-label="Facebook"
+                        target="_blank">f</a>
                     <a href="#" aria-label="Instagram">in</a>
                 </div>
             </div>
