@@ -2161,8 +2161,9 @@ section.cta-section {
 .floating-cta {
     display: block;
     position: fixed;
-    bottom: -70px;
-    right: 30px;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 999;
     transition: bottom 0.4s var(--transition-smooth);
 }
@@ -2174,8 +2175,8 @@ section.cta-section {
 .floating-cta .btn {
     background: var(--mario-pipe);
     color: var(--stone);
-    padding: 16px 32px;
-    font-size: 1rem;
+    padding: 20px 44px;
+    font-size: 1.15rem;
     font-weight: 600;
     box-shadow: 0 4px 20px rgba(0, 222, 131, 0.4);
     border: none;
@@ -2189,18 +2190,12 @@ section.cta-section {
 }
 
 @media (max-width: 768px) {
-    .floating-cta {
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .floating-cta.visible {
         bottom: 20px;
     }
 
     .floating-cta .btn {
-        padding: 14px 28px;
-        font-size: 0.9rem;
+        padding: 16px 36px;
+        font-size: 1rem;
     }
 }
