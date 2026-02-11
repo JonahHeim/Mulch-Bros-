@@ -1269,7 +1269,7 @@ section.cta-section {
     padding-top: 80px;
     background-image: url('IMG_2378.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center bottom;
     background-attachment: fixed;
 }
 
