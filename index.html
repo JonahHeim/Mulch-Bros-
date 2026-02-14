@@ -9,6 +9,24 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-STNFH3HN6C');
+        gtag('config', 'AW-17840894962');
+    </script>
+    <!-- Event snippet for Book appointment conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17840894962/5phGCIzqn9kbEPLnmbtC',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +74,8 @@
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="nav-cta">Free
+                <li><a href="quote.html" class="nav-cta" style="background: var(--primary-orange); color: var(--cream) !important;">Virtual Quote</a></li>
+                <li><a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="nav-cta" onclick="return gtag_report_conversion('https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB')">Free
                         Quote</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
@@ -81,8 +100,8 @@
                     hardworking college students. We treat your property like our own.</p>
                 <div class="hero-cta">
                     <a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB"
-                        class="btn btn-primary">Schedule Free Quote</a>
-                    <a href="services.html" class="btn btn-secondary">Our Services</a>
+                        class="btn btn-primary" onclick="return gtag_report_conversion('https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB')">Schedule Free Quote</a>
+                    <a href="quote.html" class="btn btn-secondary">Virtual Quote</a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
@@ -748,9 +767,10 @@
         </div>
     </footer>
 
-    <!-- Floating CTA Button (Mobile) -->
+    <!-- Floating CTA Buttons -->
     <div class="floating-cta">
-        <a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="btn">Get Free Quote</a>
+        <a href="quote.html" class="btn" style="background: var(--primary-orange); color: var(--cream); box-shadow: 0 4px 20px rgba(255, 151, 0, 0.4);">Virtual Quote</a>
+        <a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="btn" onclick="return gtag_report_conversion('https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB')">Get Free Quote</a>
     </div>
 
     <script src="script.js"></script>

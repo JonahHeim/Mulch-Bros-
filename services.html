@@ -9,6 +9,24 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-STNFH3HN6C');
+        gtag('config', 'AW-17840894962');
+    </script>
+    <!-- Event snippet for Book appointment conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17840894962/5phGCIzqn9kbEPLnmbtC',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +81,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="nav-cta">Free
+                <li><a href="quote.html" class="nav-cta" style="background: var(--primary-orange); color: var(--cream) !important;">Virtual Quote</a></li>
+                <li><a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="nav-cta" onclick="return gtag_report_conversion('https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB')">Free
                         Quote</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
@@ -120,44 +139,11 @@
         </div>
     </section>
 
-    <!-- Rock Beds Detail -->
-    <section class="section-light" id="rockbeds">
+    <!-- Bush Trimming Detail -->
+    <section class="section-light" id="trimming">
         <div class="container">
             <div class="service-detail reverse">
                 <div class="service-detail-image scroll-reveal-right">
-                    <div class="service-slideshow">
-                        <div class="service-slideshow-slides">
-                            <img src="mulch-stone-bed.jpg" alt="Professional rock bed installation" class="service-slide active">
-                            <img src="mulch-trees-rocks.jpeg" alt="Rock landscaping with trees" class="service-slide">
-                            <img src="mulch-stepping-stones.jpeg" alt="Stepping stones in landscape bed" class="service-slide">
-                            <img src="services-hero-bg.jpeg" alt="Landscaped rock bed" class="service-slide">
-                            <img src="mulch-path-trees.jpeg" alt="Stone path through garden" class="service-slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="service-detail-content scroll-reveal-left">
-                    <span class="section-label">Durable Design</span>
-                    <h3>Rock Beds</h3>
-                    <p>Add lasting beauty and low-maintenance appeal to your property with professional rock bed
-                        installation. Rock beds provide excellent drainage, weed suppression, and a clean look that
-                        lasts for years.</p>
-                    <ul class="service-features">
-                        <li>Variety of stone types and sizes</li>
-                        <li>Landscape fabric and proper base prep</li>
-                        <li>Edging and border installation</li>
-                        <li>Weed barrier for low maintenance</li>
-                        <li>Complete cleanup after installation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bush Trimming Detail -->
-    <section id="trimming">
-        <div class="container">
-            <div class="service-detail">
-                <div class="service-detail-image scroll-reveal-left">
                     <div class="service-slideshow">
                         <div class="service-slideshow-slides">
                             <img src="work-2.jpeg" alt="Professional bush trimming" class="service-slide active">
@@ -168,7 +154,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="service-detail-content scroll-reveal-right">
+                <div class="service-detail-content scroll-reveal-left">
                     <span class="section-label">Expert Care</span>
                     <h3>Bush Trimming</h3>
                     <p>Keep your shrubs and bushes looking their best with our trimming services. We shape
@@ -185,10 +171,10 @@
     </section>
 
     <!-- Bed Maintenance Detail -->
-    <section class="section-light" id="maintenance">
+    <section id="maintenance">
         <div class="container">
-            <div class="service-detail reverse">
-                <div class="service-detail-image scroll-reveal-right">
+            <div class="service-detail">
+                <div class="service-detail-image scroll-reveal-left">
                     <div class="service-slideshow">
                         <div class="service-slideshow-slides">
                             <img src="work-3.jpeg" alt="Well-maintained mulch bed" class="service-slide active">
@@ -200,7 +186,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="service-detail-content scroll-reveal-left">
+                <div class="service-detail-content scroll-reveal-right">
                     <span class="section-label">Ongoing Care</span>
                     <h3>Bed Maintenance</h3>
                     <p>Keep your landscape beds looking sharp year-round with our maintenance services. We handle the
@@ -210,6 +196,40 @@
                         <li>Edge trimming and maintenance</li>
                         <li>Mulch touch-ups and refreshing</li>
                         <li>Flexible scheduling options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rock Beds Detail -->
+    <section class="section-light" id="rockbeds">
+        <div class="container">
+            <div class="service-detail reverse">
+                <div class="service-detail-image scroll-reveal-right">
+                    <div class="service-slideshow">
+                        <div class="service-slideshow-slides">
+                            <img src="mulch-stone-bed.jpg" alt="Professional rock bed installation"
+                                class="service-slide active">
+                            <img src="mulch-trees-rocks.jpeg" alt="Rock landscaping with trees" class="service-slide">
+                            <img src="mulch-stepping-stones.jpeg" alt="Stepping stones in landscape bed"
+                                class="service-slide">
+                            <img src="services-hero-bg.jpeg" alt="Landscaped rock bed" class="service-slide">
+                            <img src="mulch-path-trees.jpeg" alt="Stone path through garden" class="service-slide">
+                        </div>
+                    </div>
+                </div>
+                <div class="service-detail-content scroll-reveal-left">
+                    <span class="section-label">Durable Design</span>
+                    <h3>Rock Beds</h3>
+                    <p>Add lasting beauty and low-maintenance appeal to your property with professional rock bed
+                        installation. Rock beds provide excellent drainage, weed suppression, and a clean look that
+                        lasts for years.</p>
+                    <ul class="service-features">
+                        <li>Variety of stone types and sizes</li>
+                        <li>Edging and border installation</li>
+                        <li>Weed barrier for low maintenance</li>
+                        <li>Complete cleanup after installation</li>
                     </ul>
                 </div>
             </div>
@@ -398,8 +418,9 @@
         <div class="container scroll-reveal">
             <h2>Let's Get Started</h2>
             <p>Ready to transform your yard? Contact us today for a free, no-pressure quote on any of our services.</p>
+            <a href="quote.html" class="btn btn-secondary" style="margin-right: 12px;">Virtual Quote</a>
             <a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB"
-                class="btn btn-secondary">Request Free Quote</a>
+                class="btn btn-secondary" onclick="return gtag_report_conversion('https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB')">Request Free Quote</a>
         </div>
     </section>
 
@@ -419,7 +440,7 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB"
-                                target="_blank">Contact</a></li>
+                                target="_blank" onclick="return gtag_report_conversion('https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB')">Contact</a></li>
                     </ul>
                 </div>
                 <div>
@@ -450,9 +471,10 @@
         </div>
     </footer>
 
-    <!-- Floating CTA Button (Mobile) -->
+    <!-- Floating CTA Buttons -->
     <div class="floating-cta">
-        <a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="btn">Get Free
+        <a href="quote.html" class="btn" style="background: var(--primary-orange); color: var(--cream); box-shadow: 0 4px 20px rgba(255, 151, 0, 0.4);">Virtual Quote</a>
+        <a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="btn" onclick="return gtag_report_conversion('https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB')">Get Free
             Quote</a>
     </div>
 

@@ -2157,11 +2157,12 @@ section.cta-section {
     }
 }
 
-/* ===== FLOATING CTA BUTTON (MOBILE) ===== */
+/* ===== FLOATING CTA BUTTONS ===== */
 .floating-cta {
-    display: block;
+    display: flex;
+    gap: 10px;
     position: fixed;
-    bottom: -80px;
+    bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
@@ -2175,18 +2176,17 @@ section.cta-section {
 .floating-cta .btn {
     background: var(--mario-pipe);
     color: var(--stone);
-    padding: 20px 44px;
-    font-size: 1.15rem;
+    padding: 18px 32px;
+    font-size: 1rem;
     font-weight: 600;
     box-shadow: 0 4px 20px rgba(0, 222, 131, 0.4);
     border: none;
     border-radius: 50px;
+    white-space: nowrap;
 }
 
 .floating-cta .btn:hover {
-    background: #00c574;
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 222, 131, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -2195,7 +2195,18 @@ section.cta-section {
     }
 
     .floating-cta .btn {
-        padding: 16px 36px;
-        font-size: 1rem;
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-cta {
+        gap: 8px;
+    }
+
+    .floating-cta .btn {
+        padding: 12px 18px;
+        font-size: 0.8rem;
     }
 }
