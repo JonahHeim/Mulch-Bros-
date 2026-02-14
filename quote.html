@@ -1594,22 +1594,11 @@
             // New quote
             document.getElementById('btn-new-quote').addEventListener('click', resetAll);
 
-            // Load Google Maps API key from server
-            fetch('/api/config')
-                .then(function (r) { return r.json(); })
-                .then(function (data) {
-                    if (data.googleMapsKey) {
-                        var s = document.createElement('script');
-                        s.async = true;
-                        s.src = 'https://maps.googleapis.com/maps/api/js?key=' + data.googleMapsKey + '&libraries=drawing,geometry,places&callback=initMap';
-                        document.head.appendChild(s);
-                    } else {
-                        document.getElementById('map-loading').innerHTML = '<span style="color: #dc2626;">Google Maps API key not configured. Please contact support.</span>';
-                    }
-                })
-                .catch(function () {
-                    document.getElementById('map-loading').innerHTML = '<span style="color: #dc2626;">Could not connect to server. Please try again later.</span>';
-                });
+            // Load Google Maps
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBuPZE8IVq1MI46h6oKRV1cBYCP6HLhJyo&libraries=drawing,geometry,places&callback=initMap';
+            document.head.appendChild(s);
         });
     </script>
 </body>
