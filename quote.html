@@ -12,20 +12,20 @@
         gtag('config', 'AW-17840894962');
     </script>
     <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17840894962/5phGCIzqn9kbEPLnmbtC',
+                'value': 1.0,
+                'currency': 'USD',
+                'event_callback': callback
+            });
+            return false;
         }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17840894962/5phGCIzqn9kbEPLnmbtC',
-          'value': 1.0,
-          'currency': 'USD',
-          'event_callback': callback
-      });
-      return false;
-    }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -71,7 +71,7 @@
             overflow: hidden;
         }
 
-        .quote-section > .container {
+        .quote-section>.container {
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -150,8 +150,13 @@
             transition: border-color 0.2s;
         }
 
-        .quote-address-input::placeholder { color: #a3a3a3; }
-        .quote-address-input:focus { border-color: var(--primary-orange); }
+        .quote-address-input::placeholder {
+            color: #a3a3a3;
+        }
+
+        .quote-address-input:focus {
+            border-color: var(--primary-orange);
+        }
 
         .quote-btn-search {
             padding: 8px 16px;
@@ -169,7 +174,9 @@
             letter-spacing: 0.05em;
         }
 
-        .quote-btn-search:hover { background: var(--primary-orange-dark); }
+        .quote-btn-search:hover {
+            background: var(--primary-orange-dark);
+        }
 
         .quote-map-wrap {
             flex: 1;
@@ -206,7 +213,11 @@
             animation: quoteSpin 0.8s linear infinite;
         }
 
-        @keyframes quoteSpin { to { transform: rotate(360deg); } }
+        @keyframes quoteSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
         /* Map Tools */
         .quote-map-tools {
@@ -242,13 +253,35 @@
             letter-spacing: 0.03em;
         }
 
-        .quote-tool-btn:hover { background: #f5f5f5; }
-        .quote-tool-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-        .quote-tool-btn:disabled:hover { background: transparent; }
-        .quote-tool-btn.active { background: var(--primary-orange); color: #fff; }
-        .quote-tool-secondary { color: #737373; }
-        .quote-tool-danger { color: #dc2626; }
-        .quote-tool-danger:hover { background: #fee2e2; }
+        .quote-tool-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .quote-tool-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .quote-tool-btn:disabled:hover {
+            background: transparent;
+        }
+
+        .quote-tool-btn.active {
+            background: var(--primary-orange);
+            color: #fff;
+        }
+
+        .quote-tool-secondary {
+            color: #737373;
+        }
+
+        .quote-tool-danger {
+            color: #dc2626;
+        }
+
+        .quote-tool-danger:hover {
+            background: #fee2e2;
+        }
 
         /* Bed Pill */
         .quote-bed-pill {
@@ -266,7 +299,9 @@
             animation: quotePillPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .quote-bed-pill[hidden] { display: none; }
+        .quote-bed-pill[hidden] {
+            display: none;
+        }
 
         .quote-bed-pill-count {
             font-family: 'Russo One', sans-serif;
@@ -275,7 +310,12 @@
             color: var(--primary-orange);
         }
 
-        @keyframes quotePillPop { from { opacity: 0; transform: scale(0.85); } }
+        @keyframes quotePillPop {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+        }
 
         /* Map Hint */
         .quote-map-hint {
@@ -289,7 +329,9 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .quote-map-hint strong { color: var(--primary-orange); }
+        .quote-map-hint strong {
+            color: var(--primary-orange);
+        }
 
         /* RIGHT: Form Side */
         .quote-form-side {
@@ -330,7 +372,9 @@
             margin-bottom: 8px;
         }
 
-        .quote-field:last-child { margin-bottom: 0; }
+        .quote-field:last-child {
+            margin-bottom: 0;
+        }
 
         .quote-field label {
             display: block;
@@ -356,9 +400,14 @@
             transition: border-color 0.2s;
         }
 
-        .quote-field input::placeholder { color: #a3a3a3; }
+        .quote-field input::placeholder {
+            color: #a3a3a3;
+        }
+
         .quote-field input:focus,
-        .quote-field select:focus { border-color: var(--primary-orange); }
+        .quote-field select:focus {
+            border-color: var(--primary-orange);
+        }
 
         .quote-field select {
             appearance: none;
@@ -378,7 +427,9 @@
             font-weight: 500;
         }
 
-        .quote-prev-note[hidden] { display: none; }
+        .quote-prev-note[hidden] {
+            display: none;
+        }
 
         .quote-prev-note.note-adjusted {
             background: #fef3c7;
@@ -452,7 +503,9 @@
             transition: opacity 0.15s;
         }
 
-        .quote-photo-thumb:hover .quote-photo-thumb-x { opacity: 1; }
+        .quote-photo-thumb:hover .quote-photo-thumb-x {
+            opacity: 1;
+        }
 
         /* Estimate Box */
         .quote-estimate-box {
@@ -524,8 +577,14 @@
             box-shadow: 0 4px 20px rgba(0, 222, 131, 0.4);
         }
 
-        .quote-btn-submit:disabled { opacity: 0.4; cursor: not-allowed; }
-        .quote-btn-submit:active:not(:disabled) { transform: scale(0.98); }
+        .quote-btn-submit:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .quote-btn-submit:active:not(:disabled) {
+            transform: scale(0.98);
+        }
 
         .quote-btn-submit.loading {
             color: transparent;
@@ -566,9 +625,15 @@
             animation: quoteFadeIn 0.3s ease;
         }
 
-        .quote-success-overlay[hidden] { display: none; }
+        .quote-success-overlay[hidden] {
+            display: none;
+        }
 
-        @keyframes quoteFadeIn { from { opacity: 0; } }
+        @keyframes quoteFadeIn {
+            from {
+                opacity: 0;
+            }
+        }
 
         .quote-success-card {
             background: #ffffff;
@@ -582,7 +647,10 @@
         }
 
         @keyframes quoteCardIn {
-            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
         }
 
         .quote-success-icon {
@@ -627,7 +695,10 @@
             letter-spacing: 0.05em;
         }
 
-        .quote-btn-new:hover { border-color: var(--primary-orange); background: rgba(255, 151, 0, 0.05); }
+        .quote-btn-new:hover {
+            border-color: var(--primary-orange);
+            background: rgba(255, 151, 0, 0.05);
+        }
 
         /* Toast */
         .quote-toast-container {
@@ -651,16 +722,31 @@
             animation: quoteToastIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .quote-toast-success { background: var(--mario-pipe); color: var(--stone); }
-        .quote-toast-error { background: #dc2626; color: #fff; }
-        .quote-toast-info { background: var(--stone); color: var(--cream); }
+        .quote-toast-success {
+            background: var(--mario-pipe);
+            color: var(--stone);
+        }
+
+        .quote-toast-error {
+            background: #dc2626;
+            color: #fff;
+        }
+
+        .quote-toast-info {
+            background: var(--stone);
+            color: var(--cream);
+        }
 
         @keyframes quoteToastIn {
-            from { opacity: 0; transform: translateY(10px) scale(0.95); }
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.95);
+            }
         }
 
         /* Mobile responsive */
         @media (max-width: 900px) {
+
             html.quote-page,
             html.quote-page body {
                 height: auto;
@@ -684,16 +770,26 @@
                 border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             }
 
-            .quote-map-wrap { min-height: 300px; }
-            .quote-map-container { min-height: 300px; }
+            .quote-map-wrap {
+                min-height: 300px;
+            }
+
+            .quote-map-container {
+                min-height: 300px;
+            }
 
             .quote-form-side {
                 width: 100%;
                 overflow-y: visible;
             }
 
-            .quote-tool-btn span { display: none; }
-            .quote-tool-btn { padding: 10px 12px; }
+            .quote-tool-btn span {
+                display: none;
+            }
+
+            .quote-tool-btn {
+                padding: 10px 12px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -744,7 +840,6 @@
     <section class="quote-section">
         <div class="container">
             <div class="quote-header">
-                <span class="section-label">Instant Estimate</span>
                 <h1>Get Your <span>Virtual Quote</span></h1>
                 <p>Draw your mulch beds on the map, fill in your info, and we'll send you an estimate right away.</p>
             </div>
@@ -753,8 +848,13 @@
                 <!-- LEFT: Map Area -->
                 <div class="quote-map-side">
                     <div class="quote-address-bar">
-                        <svg class="quote-address-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                        <input type="text" id="address-input" class="quote-address-input" placeholder="Enter your property address..." autocomplete="off">
+                        <svg class="quote-address-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                        <input type="text" id="address-input" class="quote-address-input"
+                            placeholder="Enter your property address..." autocomplete="off">
                         <button id="btn-search" class="quote-btn-search">Go</button>
                     </div>
 
@@ -768,25 +868,39 @@
 
                         <div class="quote-map-tools">
                             <button id="btn-draw" class="quote-tool-btn" title="Draw a mulch bed">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+                                </svg>
                                 <span>Draw Bed</span>
                             </button>
-                            <button id="btn-undo" class="quote-tool-btn quote-tool-secondary" title="Remove last bed" disabled>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 00-9-9 9 9 0 00-6.69 3L3 13"/></svg>
+                            <button id="btn-undo" class="quote-tool-btn quote-tool-secondary" title="Remove last bed"
+                                disabled>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M3 7v6h6" />
+                                    <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6.69 3L3 13" />
+                                </svg>
                                 <span>Undo</span>
                             </button>
                             <button id="btn-clear" class="quote-tool-btn quote-tool-danger" title="Clear all" disabled>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6" />
+                                </svg>
                                 <span>Clear</span>
                             </button>
                         </div>
 
                         <div class="quote-bed-pill" id="bed-pill" hidden>
-                            <span class="quote-bed-pill-count" id="bed-pill-count">0</span> beds &middot; <span id="bed-pill-sqft">0</span> sq ft
+                            <span class="quote-bed-pill-count" id="bed-pill-count">0</span> beds &middot; <span
+                                id="bed-pill-sqft">0</span> sq ft
                         </div>
                     </div>
 
-                    <p class="quote-map-hint" id="map-hint">Enter your address above, then use <strong>Draw Bed</strong> to outline each mulch area.</p>
+                    <p class="quote-map-hint" id="map-hint">Enter your address above, then use <strong>Draw Bed</strong>
+                        to outline each mulch area.</p>
                 </div>
 
                 <!-- RIGHT: Form -->
@@ -825,7 +939,8 @@
                             <select id="f-rock-type"></select>
                         </div>
                         <div class="quote-field">
-                            <label for="f-prev-yards">Previous yards ordered <span class="quote-optional">(if applicable)</span></label>
+                            <label for="f-prev-yards">Previous yards ordered <span class="quote-optional">(if
+                                    applicable)</span></label>
                             <input type="number" id="f-prev-yards" placeholder="e.g. 8" min="0" step="0.5">
                         </div>
                         <div class="quote-prev-note" id="prev-yards-note" hidden></div>
@@ -835,7 +950,12 @@
                         <h2 class="quote-form-heading">Photos <span class="quote-optional">(optional)</span></h2>
                         <div class="quote-photo-drop" id="photo-drop">
                             <input type="file" id="photo-input" accept="image/*" multiple capture="environment" hidden>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" opacity="0.4">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="M21 15l-5-5L5 21" />
+                            </svg>
                             <span>Tap to add photos of your beds</span>
                         </div>
                         <div id="photo-gallery" class="quote-photo-gallery"></div>
@@ -865,7 +985,8 @@
                     <button class="quote-btn-submit" id="btn-submit" disabled>
                         Submit Quote Request
                     </button>
-                    <p class="quote-submit-note">We'll email you a detailed estimate and may follow up to schedule service.</p>
+                    <p class="quote-submit-note">We'll email you a detailed estimate and may follow up to schedule
+                        service.</p>
                 </div>
             </div>
         </div>
@@ -878,7 +999,10 @@
     <div class="quote-success-overlay" id="success-overlay" hidden>
         <div class="quote-success-card">
             <div class="quote-success-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                </svg>
             </div>
             <h2>Quote Submitted!</h2>
             <p id="success-msg">Check your email for your mulch estimate. We'll be in touch soon!</p>
@@ -891,602 +1015,602 @@
 
     <!-- Quote Tool Config & App -->
     <script>
-    /* ══════════════════════════════════════
-       Mulch Bros — Virtual Quote Tool
-       ══════════════════════════════════════ */
+        /* ══════════════════════════════════════
+           Mulch Bros — Virtual Quote Tool
+           ══════════════════════════════════════ */
 
-    const CONFIG = {
-        companyName: 'Mulch Bros',
-        primaryColor: '#FF9700',
-        primaryDarkColor: '#e68600',
-        primaryLightColor: 'rgba(255, 151, 0, 0.1)',
-        mulchTypes: [
-            { id: 'hardwood', name: 'Hardwood', swatch: '#8B6914' },
-            { id: 'dyed-black', name: 'Dyed Black', swatch: '#1a1a1a' },
-            { id: 'dyed-brown', name: 'Dyed Brown', swatch: '#5C3317' },
-            { id: 'dyed-red', name: 'Dyed Red', swatch: '#8B2500' },
-            { id: 'cedar', name: 'Cedar', swatch: '#C19A6B' },
-            { id: 'dyed-gold', name: 'Dyed Gold', swatch: '#4b3e04' },
-        ],
-        rockTypes: [
-            { id: 'river-rock', name: 'River Rock', swatch: '#8a8a7a' },
-            { id: 'pea-gravel', name: 'Pea Gravel', swatch: '#c2b280' },
-            { id: 'lava-rock', name: 'Lava Rock', swatch: '#8b1a1a' },
-            { id: 'marble-chips', name: 'Marble Chips', swatch: '#e8e8e8' },
-            { id: 'crushed-granite', name: 'Crushed Granite', swatch: '#a0522d' },
-        ],
-        defaultDepth: 3.5,
-        pricePerYard: 130,
-        sqftPerYard: 150,
-        defaultMapCenter: { lat: 42.5847, lng: -83.5966 },
-        defaultMapZoom: 12,
-        country: 'us',
-        ghlPipelineId: '',
-        ghlStageId: '',
-        ghlTags: ['mulch-quote', 'virtual-quote'],
-    };
+        const CONFIG = {
+            companyName: 'Mulch Bros',
+            primaryColor: '#FF9700',
+            primaryDarkColor: '#e68600',
+            primaryLightColor: 'rgba(255, 151, 0, 0.1)',
+            mulchTypes: [
+                { id: 'hardwood', name: 'Hardwood', swatch: '#8B6914' },
+                { id: 'dyed-black', name: 'Dyed Black', swatch: '#1a1a1a' },
+                { id: 'dyed-brown', name: 'Dyed Brown', swatch: '#5C3317' },
+                { id: 'dyed-red', name: 'Dyed Red', swatch: '#8B2500' },
+                { id: 'cedar', name: 'Cedar', swatch: '#C19A6B' },
+                { id: 'dyed-gold', name: 'Dyed Gold', swatch: '#4b3e04' },
+            ],
+            rockTypes: [
+                { id: 'river-rock', name: 'River Rock', swatch: '#8a8a7a' },
+                { id: 'pea-gravel', name: 'Pea Gravel', swatch: '#c2b280' },
+                { id: 'lava-rock', name: 'Lava Rock', swatch: '#8b1a1a' },
+                { id: 'marble-chips', name: 'Marble Chips', swatch: '#e8e8e8' },
+                { id: 'crushed-granite', name: 'Crushed Granite', swatch: '#a0522d' },
+            ],
+            defaultDepth: 3.5,
+            pricePerYard: 130,
+            sqftPerYard: 150,
+            defaultMapCenter: { lat: 42.5847, lng: -83.5966 },
+            defaultMapZoom: 12,
+            country: 'us',
+            ghlPipelineId: '',
+            ghlStageId: '',
+            ghlTags: ['mulch-quote', 'virtual-quote'],
+        };
 
-    /* ── State ── */
-    const state = {
-        map: null,
-        drawingManager: null,
-        autocomplete: null,
-        beds: [],
-        bedCounter: 0,
-        photos: [],
-        selectedDepth: CONFIG.defaultDepth,
-        selectedMulchType: null,
-        address: '',
-        isDrawing: false,
-    };
+        /* ── State ── */
+        const state = {
+            map: null,
+            drawingManager: null,
+            autocomplete: null,
+            beds: [],
+            bedCounter: 0,
+            photos: [],
+            selectedDepth: CONFIG.defaultDepth,
+            selectedMulchType: null,
+            address: '',
+            isDrawing: false,
+        };
 
-    const BED_COLORS = [
-        '#FF9700', '#00DE83', '#3b82f6', '#dc2626',
-        '#7c3aed', '#db2777', '#0d9488', '#ea580c'
-    ];
+        const BED_COLORS = [
+            '#FF9700', '#00DE83', '#3b82f6', '#dc2626',
+            '#7c3aed', '#db2777', '#0d9488', '#ea580c'
+        ];
 
-    /* ═══════ Google Maps ═══════ */
+        /* ═══════ Google Maps ═══════ */
 
-    function initMap() {
-        var loader = document.getElementById('map-loading');
-        if (loader) loader.remove();
+        function initMap() {
+            var loader = document.getElementById('map-loading');
+            if (loader) loader.remove();
 
-        state.map = new google.maps.Map(document.getElementById('map'), {
-            center: CONFIG.defaultMapCenter,
-            zoom: CONFIG.defaultMapZoom,
-            mapTypeId: 'satellite',
-            tilt: 0,
-            mapTypeControl: false,
-            fullscreenControl: false,
-            streetViewControl: false,
-            zoomControl: true,
-            gestureHandling: 'greedy',
-        });
-
-        state.drawingManager = new google.maps.drawing.DrawingManager({
-            drawingMode: null,
-            drawingControl: false,
-            polygonOptions: {
-                fillColor: BED_COLORS[0],
-                fillOpacity: 0.3,
-                strokeColor: BED_COLORS[0],
-                strokeWeight: 2,
-                editable: true,
-                draggable: false,
-            },
-        });
-        state.drawingManager.setMap(state.map);
-
-        google.maps.event.addListener(state.drawingManager, 'polygoncomplete', function(polygon) {
-            addBed(polygon);
-            state.drawingManager.setDrawingMode(null);
-            setDrawingActive(false);
-        });
-
-        var input = document.getElementById('address-input');
-        state.autocomplete = new google.maps.places.Autocomplete(input, {
-            types: ['address'],
-            componentRestrictions: { country: CONFIG.country },
-        });
-
-        state.autocomplete.addListener('place_changed', function() {
-            var place = state.autocomplete.getPlace();
-            if (place && place.geometry) {
-                state.address = place.formatted_address || input.value;
-                state.map.setCenter(place.geometry.location);
-                state.map.setZoom(20);
-                updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
-            }
-        });
-    }
-
-    window.initMap = initMap;
-
-    /* ═══════ Beds ═══════ */
-
-    function addBed(polygon) {
-        var id = ++state.bedCounter;
-        var color = BED_COLORS[(id - 1) % BED_COLORS.length];
-        var sqft = calcSqFt(polygon);
-
-        polygon.setOptions({ fillColor: color, strokeColor: color });
-
-        var bed = { id: id, polygon: polygon, name: 'Bed ' + id, sqft: sqft, color: color };
-        state.beds.push(bed);
-
-        ['set_at', 'insert_at', 'remove_at'].forEach(function(evt) {
-            google.maps.event.addListener(polygon.getPath(), evt, function() {
-                bed.sqft = calcSqFt(polygon);
-                updateUI();
+            state.map = new google.maps.Map(document.getElementById('map'), {
+                center: CONFIG.defaultMapCenter,
+                zoom: CONFIG.defaultMapZoom,
+                mapTypeId: 'satellite',
+                tilt: 0,
+                mapTypeControl: false,
+                fullscreenControl: false,
+                streetViewControl: false,
+                zoomControl: true,
+                gestureHandling: 'greedy',
             });
-        });
 
-        updateUI();
-        updateHint('Bed ' + id + ' added (' + Math.round(sqft) + ' sq ft). Draw more or adjust outlines.');
-    }
-
-    function removeLastBed() {
-        if (state.beds.length === 0) return;
-        var bed = state.beds.pop();
-        bed.polygon.setMap(null);
-        updateUI();
-    }
-
-    function clearAllBeds() {
-        state.beds.forEach(function(b) { b.polygon.setMap(null); });
-        state.beds = [];
-        state.bedCounter = 0;
-        updateUI();
-    }
-
-    function calcSqFt(polygon) {
-        return google.maps.geometry.spherical.computeArea(polygon.getPath()) * 10.7639;
-    }
-
-    function getTotalSqFt() {
-        return state.beds.reduce(function(s, b) { return s + b.sqft; }, 0);
-    }
-
-    function getCalculatedYards() {
-        return getTotalSqFt() / CONFIG.sqftPerYard;
-    }
-
-    function getTotalYards() {
-        var calculated = getCalculatedYards();
-        var prevInput = document.getElementById('f-prev-yards');
-        var prevYards = parseFloat(prevInput && prevInput.value) || 0;
-        if (prevYards > 0 && prevYards > calculated * 1.25) {
-            return prevYards;
-        }
-        return calculated;
-    }
-
-    function getTotalPrice() {
-        return getTotalYards() * CONFIG.pricePerYard;
-    }
-
-    function checkPreviousYards() {
-        var note = document.getElementById('prev-yards-note');
-        var prevInput = document.getElementById('f-prev-yards');
-        var prevYards = parseFloat(prevInput && prevInput.value) || 0;
-        var calculated = getCalculatedYards();
-
-        if (prevYards <= 0 || calculated <= 0) {
-            note.hidden = true;
-            return;
-        }
-
-        note.hidden = false;
-        var diff = ((prevYards - calculated) / calculated) * 100;
-
-        if (prevYards > calculated * 1.25) {
-            note.className = 'quote-prev-note note-adjusted';
-            note.innerHTML = 'Your previous order (' + prevYards + ' yds) is higher than our satellite estimate (' + calculated.toFixed(1) + ' yds). We\'ve adjusted your quote to <strong>' + prevYards + ' yds</strong> to make sure you have enough.';
-        } else if (Math.abs(diff) <= 25) {
-            note.className = 'quote-prev-note note-match';
-            note.innerHTML = 'Our estimate (' + calculated.toFixed(1) + ' yds) is close to your previous order (' + prevYards + ' yds) — looks right!';
-        } else {
-            note.className = 'quote-prev-note note-match';
-            note.innerHTML = 'Our estimate (' + calculated.toFixed(1) + ' yds) is a bit more than your previous order (' + prevYards + ' yds). We\'ll go with our measurement to ensure full coverage.';
-        }
-    }
-
-    /* ═══════ UI Updates ═══════ */
-
-    function updateUI() {
-        var count = state.beds.length;
-        var sqft = getTotalSqFt();
-        var yards = getTotalYards();
-        var price = getTotalPrice();
-
-        var pill = document.getElementById('bed-pill');
-        if (count > 0) {
-            pill.hidden = false;
-            document.getElementById('bed-pill-count').textContent = count;
-            document.getElementById('bed-pill-sqft').textContent = Math.round(sqft).toLocaleString();
-        } else {
-            pill.hidden = true;
-        }
-
-        document.getElementById('btn-undo').disabled = count === 0;
-        document.getElementById('btn-clear').disabled = count === 0;
-
-        document.getElementById('est-beds').textContent = count;
-        document.getElementById('est-sqft').textContent = Math.round(sqft).toLocaleString() + ' sq ft';
-        document.getElementById('est-yards').textContent = yards.toFixed(1);
-        document.getElementById('est-price').textContent = '$' + Math.round(price).toLocaleString();
-
-        validateSubmit();
-    }
-
-    function updateHint(text) {
-        document.getElementById('map-hint').innerHTML = text;
-    }
-
-    function validateSubmit() {
-        var name = document.getElementById('f-name').value.trim();
-        var email = document.getElementById('f-email').value.trim();
-        var phone = document.getElementById('f-phone').value.trim();
-        var hasBeds = state.beds.length > 0;
-        var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-        document.getElementById('btn-submit').disabled = !(name && emailOk && phone && hasBeds);
-    }
-
-    function setDrawingActive(active) {
-        state.isDrawing = active;
-        document.getElementById('btn-draw').classList.toggle('active', active);
-    }
-
-    /* ═══════ Photos ═══════ */
-
-    function handlePhotos(files) {
-        Array.from(files).forEach(function(file) {
-            if (!file.type.startsWith('image/')) return;
-            state.photos.push({ file: file, url: URL.createObjectURL(file), name: file.name });
-        });
-        renderPhotos();
-    }
-
-    function removePhoto(i) {
-        URL.revokeObjectURL(state.photos[i].url);
-        state.photos.splice(i, 1);
-        renderPhotos();
-    }
-
-    function renderPhotos() {
-        var g = document.getElementById('photo-gallery');
-        g.innerHTML = state.photos.map(function(p, i) {
-            return '<div class="quote-photo-thumb"><img src="' + p.url + '" alt="' + p.name + '"><button class="quote-photo-thumb-x" onclick="removePhoto(' + i + ')">&times;</button></div>';
-        }).join('');
-    }
-
-    /* ═══════ Submit ═══════ */
-
-    async function submitQuote() {
-        var btn = document.getElementById('btn-submit');
-        btn.classList.add('loading');
-        btn.disabled = true;
-
-        var name = document.getElementById('f-name').value.trim();
-        var email = document.getElementById('f-email').value.trim();
-        var phone = document.getElementById('f-phone').value.trim();
-        var material = document.getElementById('f-material').value;
-        var mulchSelect = document.getElementById('f-mulch-type');
-        var rockSelect = document.getElementById('f-rock-type');
-        var mulchType = material === 'rock'
-            ? rockSelect.options[rockSelect.selectedIndex].text
-            : mulchSelect.options[mulchSelect.selectedIndex].text;
-        var prevYards = parseFloat(document.getElementById('f-prev-yards').value) || 0;
-        var sqft = getTotalSqFt();
-        var calculatedYards = getCalculatedYards();
-        var yards = getTotalYards();
-        var price = getTotalPrice();
-        var bedNames = state.beds.map(function(b) { return b.name; });
-        var wasAdjusted = prevYards > 0 && prevYards > calculatedYards * 1.25;
-
-        try {
-            // Create contact
-            var contactRes = await fetch('/api/contacts', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    address1: state.address,
-                    tags: CONFIG.ghlTags,
-                    customField: {
-                        bed_names: bedNames.join(', '),
-                        total_square_feet: Math.round(sqft).toString(),
-                        total_cubic_yards: yards.toFixed(2),
-                        mulch_depth: state.selectedDepth + '"',
-                        mulch_type: mulchType,
-                        quote_amount: Math.round(price).toString(),
-                        property_address: state.address,
-                        last_service_date: new Date().toISOString().split('T')[0],
-                    },
-                }),
+            state.drawingManager = new google.maps.drawing.DrawingManager({
+                drawingMode: null,
+                drawingControl: false,
+                polygonOptions: {
+                    fillColor: BED_COLORS[0],
+                    fillOpacity: 0.3,
+                    strokeColor: BED_COLORS[0],
+                    strokeWeight: 2,
+                    editable: true,
+                    draggable: false,
+                },
             });
-            var contactResult = await contactRes.json();
-            var contactId = contactResult && contactResult.contact && contactResult.contact.id;
+            state.drawingManager.setMap(state.map);
 
-            if (contactId) {
-                // Add note
-                var noteLines = [
-                    'Virtual Mulch Quote — ' + new Date().toLocaleDateString(),
-                    'Address: ' + state.address,
-                    'Mulch Type: ' + mulchType,
-                    'Depth: ' + state.selectedDepth + '"',
-                    '',
-                ];
-                state.beds.forEach(function(bed) {
-                    var bedYards = bed.sqft / CONFIG.sqftPerYard;
-                    noteLines.push(bed.name + ': ' + Math.round(bed.sqft) + ' sq ft → ' + bedYards.toFixed(2) + ' yds');
+            google.maps.event.addListener(state.drawingManager, 'polygoncomplete', function (polygon) {
+                addBed(polygon);
+                state.drawingManager.setDrawingMode(null);
+                setDrawingActive(false);
+            });
+
+            var input = document.getElementById('address-input');
+            state.autocomplete = new google.maps.places.Autocomplete(input, {
+                types: ['address'],
+                componentRestrictions: { country: CONFIG.country },
+            });
+
+            state.autocomplete.addListener('place_changed', function () {
+                var place = state.autocomplete.getPlace();
+                if (place && place.geometry) {
+                    state.address = place.formatted_address || input.value;
+                    state.map.setCenter(place.geometry.location);
+                    state.map.setZoom(20);
+                    updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
+                }
+            });
+        }
+
+        window.initMap = initMap;
+
+        /* ═══════ Beds ═══════ */
+
+        function addBed(polygon) {
+            var id = ++state.bedCounter;
+            var color = BED_COLORS[(id - 1) % BED_COLORS.length];
+            var sqft = calcSqFt(polygon);
+
+            polygon.setOptions({ fillColor: color, strokeColor: color });
+
+            var bed = { id: id, polygon: polygon, name: 'Bed ' + id, sqft: sqft, color: color };
+            state.beds.push(bed);
+
+            ['set_at', 'insert_at', 'remove_at'].forEach(function (evt) {
+                google.maps.event.addListener(polygon.getPath(), evt, function () {
+                    bed.sqft = calcSqFt(polygon);
+                    updateUI();
                 });
-                if (prevYards > 0) {
-                    noteLines.push('Previous order: ' + prevYards + ' yds');
-                    noteLines.push('Satellite estimate: ' + calculatedYards.toFixed(2) + ' yds');
-                    if (wasAdjusted) noteLines.push('→ Adjusted to previous order amount (' + prevYards + ' yds)');
-                }
-                noteLines.push('', 'Total: ' + Math.round(sqft) + ' sq ft, ' + yards.toFixed(2) + ' cubic yards', 'Quote: $' + Math.round(price));
+            });
 
-                await fetch('/api/contacts/' + contactId + '/notes', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ body: noteLines.join('\n') }),
-                });
+            updateUI();
+            updateHint('Bed ' + id + ' added (' + Math.round(sqft) + ' sq ft). Draw more or adjust outlines.');
+        }
 
-                // Upload photos
-                for (var pi = 0; pi < state.photos.length; pi++) {
-                    var fd = new FormData();
-                    fd.append('file', state.photos[pi].file);
-                    await fetch('/api/media/upload', { method: 'POST', body: fd });
-                }
+        function removeLastBed() {
+            if (state.beds.length === 0) return;
+            var bed = state.beds.pop();
+            bed.polygon.setMap(null);
+            updateUI();
+        }
 
-                // Send email
-                var firstName = name.split(' ')[0] || 'there';
-                var bedLines = state.beds.map(function(b) {
-                    var bYards = b.sqft / CONFIG.sqftPerYard;
-                    return '  • ' + b.name + ': ' + Math.round(b.sqft) + ' sq ft — ' + bYards.toFixed(1) + ' cubic yards';
-                }).join('\n');
+        function clearAllBeds() {
+            state.beds.forEach(function (b) { b.polygon.setMap(null); });
+            state.beds = [];
+            state.bedCounter = 0;
+            updateUI();
+        }
 
-                var emailMsg = 'Hi ' + firstName + ',\n\nThanks for requesting a mulch quote from Mulch Bros! Here\'s your estimate:\n\n📍 Property: ' + state.address + '\n\n🌿 Mulch Details:\n  Type: ' + mulchType + '\n  Depth: ' + state.selectedDepth + ' inches\n\n📐 Bed Breakdown:\n' + bedLines + '\n\n📊 Summary:\n  Total Area: ' + Math.round(sqft).toLocaleString() + ' sq ft\n  Material Needed: ' + yards.toFixed(1) + ' cubic yards\n  Rate: $' + CONFIG.pricePerYard + ' per cubic yard\n\n💰 Estimated Total: $' + Math.round(price).toLocaleString() + '\n\nThis is an estimate based on satellite measurements. Final pricing may vary based on site conditions.\n\nReady to schedule? Reply to this message or call us at (262) 613-7406!\n\n— Mulch Bros';
+        function calcSqFt(polygon) {
+            return google.maps.geometry.spherical.computeArea(polygon.getPath()) * 10.7639;
+        }
 
-                await fetch('/api/conversations/messages', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ type: 'Email', contactId: contactId, message: emailMsg }),
-                });
+        function getTotalSqFt() {
+            return state.beds.reduce(function (s, b) { return s + b.sqft; }, 0);
+        }
 
-                // SMS
-                if (phone) {
-                    var smsText = 'Hi ' + firstName + '! Your Mulch Bros estimate: ' + mulchType + ', ' + yards.toFixed(1) + ' cubic yards, ~$' + Math.round(price) + '. Check your email for the full breakdown!';
-                    await fetch('/api/conversations/messages', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ type: 'SMS', contactId: contactId, message: smsText }),
-                    });
-                }
+        function getCalculatedYards() {
+            return getTotalSqFt() / CONFIG.sqftPerYard;
+        }
 
-                // Pipeline opportunity
-                if (CONFIG.ghlPipelineId && CONFIG.ghlStageId) {
-                    await fetch('/api/opportunities', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            pipelineId: CONFIG.ghlPipelineId,
-                            pipelineStageId: CONFIG.ghlStageId,
-                            contactId: contactId,
-                            name: 'Virtual Mulch Quote — ' + name,
-                            monetaryValue: Math.round(price),
-                        }),
-                    });
-                }
+        function getTotalYards() {
+            var calculated = getCalculatedYards();
+            var prevInput = document.getElementById('f-prev-yards');
+            var prevYards = parseFloat(prevInput && prevInput.value) || 0;
+            if (prevYards > 0 && prevYards > calculated * 1.25) {
+                return prevYards;
             }
-
-            // Show success
-            document.getElementById('success-msg').textContent =
-                'We sent your estimate to ' + email + (phone ? ' and texted a summary to your phone' : '') + '. A team member will be in touch soon!';
-            document.getElementById('success-overlay').hidden = false;
-
-        } catch (err) {
-            showToast('Something went wrong. Please try again.', 'error');
-            console.error(err);
+            return calculated;
         }
 
-        btn.classList.remove('loading');
-        btn.disabled = false;
-    }
-
-    /* ═══════ Reset ═══════ */
-
-    function resetAll() {
-        clearAllBeds();
-        state.photos.forEach(function(p) { URL.revokeObjectURL(p.url); });
-        state.photos = [];
-        state.address = '';
-        state.selectedDepth = CONFIG.defaultDepth;
-
-        document.getElementById('f-name').value = '';
-        document.getElementById('f-email').value = '';
-        document.getElementById('f-phone').value = '';
-        document.getElementById('f-prev-yards').value = '';
-        document.getElementById('prev-yards-note').hidden = true;
-        document.getElementById('address-input').value = '';
-        document.getElementById('photo-gallery').innerHTML = '';
-
-        var select = document.getElementById('f-mulch-type');
-        if (select.options.length) select.selectedIndex = 0;
-
-        if (state.map) {
-            state.map.setCenter(CONFIG.defaultMapCenter);
-            state.map.setZoom(CONFIG.defaultMapZoom);
+        function getTotalPrice() {
+            return getTotalYards() * CONFIG.pricePerYard;
         }
 
-        updateUI();
-        updateHint('Enter your address above, then use <strong>Draw Bed</strong> to outline each mulch area.');
-        document.getElementById('success-overlay').hidden = true;
-    }
+        function checkPreviousYards() {
+            var note = document.getElementById('prev-yards-note');
+            var prevInput = document.getElementById('f-prev-yards');
+            var prevYards = parseFloat(prevInput && prevInput.value) || 0;
+            var calculated = getCalculatedYards();
 
-    /* ═══════ Toast ═══════ */
-
-    function showToast(message, type) {
-        type = type || 'info';
-        var c = document.getElementById('toast-container');
-        var t = document.createElement('div');
-        t.className = 'quote-toast quote-toast-' + type;
-        t.textContent = message;
-        c.appendChild(t);
-        setTimeout(function() {
-            t.style.opacity = '0';
-            t.style.transition = '300ms ease';
-            setTimeout(function() { t.remove(); }, 300);
-        }, 3500);
-    }
-
-    /* ═══════ Init ═══════ */
-
-    document.addEventListener('DOMContentLoaded', function() {
-        // Populate mulch type dropdown
-        var select = document.getElementById('f-mulch-type');
-        CONFIG.mulchTypes.forEach(function(t, i) {
-            var opt = document.createElement('option');
-            opt.value = t.id;
-            opt.textContent = t.name;
-            if (i === 0) opt.selected = true;
-            select.appendChild(opt);
-        });
-        state.selectedMulchType = CONFIG.mulchTypes[0] && CONFIG.mulchTypes[0].id;
-
-        // Populate rock type dropdown
-        var rockSelect = document.getElementById('f-rock-type');
-        CONFIG.rockTypes.forEach(function(t, i) {
-            var opt = document.createElement('option');
-            opt.value = t.id;
-            opt.textContent = t.name;
-            if (i === 0) opt.selected = true;
-            rockSelect.appendChild(opt);
-        });
-
-        // Material toggle
-        document.getElementById('f-material').addEventListener('change', function(e) {
-            var isRock = e.target.value === 'rock';
-            document.getElementById('mulch-type-field').hidden = isRock;
-            document.getElementById('rock-type-field').hidden = !isRock;
-        });
-
-        // Address search
-        document.getElementById('btn-search').addEventListener('click', function() {
-            var val = document.getElementById('address-input').value.trim();
-            if (!val) return;
-
-            var selectedPlace = state.autocomplete.getPlace();
-            if (selectedPlace && selectedPlace.geometry) {
-                state.address = selectedPlace.formatted_address || val;
-                state.map.setCenter(selectedPlace.geometry.location);
-                state.map.setZoom(20);
-                updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
+            if (prevYards <= 0 || calculated <= 0) {
+                note.hidden = true;
                 return;
             }
 
-            var acService = new google.maps.places.AutocompleteService();
-            acService.getPlacePredictions(
-                { input: val, types: ['address'], componentRestrictions: { country: CONFIG.country } },
-                function(predictions, status) {
-                    if (status !== google.maps.places.PlacesServiceStatus.OK || !predictions || !predictions.length) {
-                        showToast('Address not found. Try a more specific address.', 'error');
-                        return;
-                    }
-                    var placeId = predictions[0].place_id;
-                    var placesService = new google.maps.places.PlacesService(state.map);
-                    placesService.getDetails({ placeId: placeId, fields: ['formatted_address', 'geometry'] }, function(place, detailStatus) {
-                        if (detailStatus === google.maps.places.PlacesServiceStatus.OK && place.geometry) {
-                            state.address = place.formatted_address || val;
-                            document.getElementById('address-input').value = place.formatted_address || val;
-                            state.map.setCenter(place.geometry.location);
-                            state.map.setZoom(20);
-                            updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
-                        } else {
-                            showToast('Address not found. Try a more specific address.', 'error');
-                        }
-                    });
-                }
-            );
-        });
+            note.hidden = false;
+            var diff = ((prevYards - calculated) / calculated) * 100;
 
-        document.getElementById('address-input').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') { e.preventDefault(); document.getElementById('btn-search').click(); }
-        });
-
-        // Drawing tools
-        document.getElementById('btn-draw').addEventListener('click', function() {
-            if (state.isDrawing) {
-                state.drawingManager.setDrawingMode(null);
-                setDrawingActive(false);
+            if (prevYards > calculated * 1.25) {
+                note.className = 'quote-prev-note note-adjusted';
+                note.innerHTML = 'Your previous order (' + prevYards + ' yds) is higher than our satellite estimate (' + calculated.toFixed(1) + ' yds). We\'ve adjusted your quote to <strong>' + prevYards + ' yds</strong> to make sure you have enough.';
+            } else if (Math.abs(diff) <= 25) {
+                note.className = 'quote-prev-note note-match';
+                note.innerHTML = 'Our estimate (' + calculated.toFixed(1) + ' yds) is close to your previous order (' + prevYards + ' yds) — looks right!';
             } else {
-                var nextColor = BED_COLORS[state.bedCounter % BED_COLORS.length];
-                state.drawingManager.setOptions({
-                    polygonOptions: {
-                        fillColor: nextColor, fillOpacity: 0.3,
-                        strokeColor: nextColor, strokeWeight: 2,
-                        editable: true, draggable: false,
-                    },
-                });
-                state.drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
-                setDrawingActive(true);
-                updateHint('Tap the corners of a mulch bed on the map. Tap the first point to close the shape.');
+                note.className = 'quote-prev-note note-match';
+                note.innerHTML = 'Our estimate (' + calculated.toFixed(1) + ' yds) is a bit more than your previous order (' + prevYards + ' yds). We\'ll go with our measurement to ensure full coverage.';
             }
-        });
+        }
 
-        document.getElementById('btn-undo').addEventListener('click', removeLastBed);
-        document.getElementById('btn-clear').addEventListener('click', function() {
-            if (state.beds.length > 0) clearAllBeds();
-        });
+        /* ═══════ UI Updates ═══════ */
 
-        // Photos
-        var photoDrop = document.getElementById('photo-drop');
-        var photoInput = document.getElementById('photo-input');
-        photoDrop.addEventListener('click', function() { photoInput.click(); });
-        photoDrop.addEventListener('dragover', function(e) { e.preventDefault(); photoDrop.style.borderColor = 'var(--primary-orange)'; });
-        photoDrop.addEventListener('dragleave', function() { photoDrop.style.borderColor = ''; });
-        photoDrop.addEventListener('drop', function(e) { e.preventDefault(); photoDrop.style.borderColor = ''; handlePhotos(e.dataTransfer.files); });
-        photoInput.addEventListener('change', function() { handlePhotos(photoInput.files); photoInput.value = ''; });
+        function updateUI() {
+            var count = state.beds.length;
+            var sqft = getTotalSqFt();
+            var yards = getTotalYards();
+            var price = getTotalPrice();
 
-        // Previous yards
-        document.getElementById('f-prev-yards').addEventListener('input', function() {
-            checkPreviousYards();
-            updateUI();
-        });
+            var pill = document.getElementById('bed-pill');
+            if (count > 0) {
+                pill.hidden = false;
+                document.getElementById('bed-pill-count').textContent = count;
+                document.getElementById('bed-pill-sqft').textContent = Math.round(sqft).toLocaleString();
+            } else {
+                pill.hidden = true;
+            }
 
-        // Form validation
-        ['f-name', 'f-email', 'f-phone'].forEach(function(id) {
-            document.getElementById(id).addEventListener('input', validateSubmit);
-        });
+            document.getElementById('btn-undo').disabled = count === 0;
+            document.getElementById('btn-clear').disabled = count === 0;
 
-        // Submit
-        document.getElementById('btn-submit').addEventListener('click', submitQuote);
+            document.getElementById('est-beds').textContent = count;
+            document.getElementById('est-sqft').textContent = Math.round(sqft).toLocaleString() + ' sq ft';
+            document.getElementById('est-yards').textContent = yards.toFixed(1);
+            document.getElementById('est-price').textContent = '$' + Math.round(price).toLocaleString();
 
-        // New quote
-        document.getElementById('btn-new-quote').addEventListener('click', resetAll);
+            validateSubmit();
+        }
 
-        // Load Google Maps API key from server
-        fetch('/api/config')
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (data.googleMapsKey) {
-                    var s = document.createElement('script');
-                    s.async = true;
-                    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + data.googleMapsKey + '&libraries=drawing,geometry,places&callback=initMap';
-                    document.head.appendChild(s);
-                } else {
-                    document.getElementById('map-loading').innerHTML = '<span style="color: #dc2626;">Google Maps API key not configured. Please contact support.</span>';
-                }
-            })
-            .catch(function() {
-                document.getElementById('map-loading').innerHTML = '<span style="color: #dc2626;">Could not connect to server. Please try again later.</span>';
+        function updateHint(text) {
+            document.getElementById('map-hint').innerHTML = text;
+        }
+
+        function validateSubmit() {
+            var name = document.getElementById('f-name').value.trim();
+            var email = document.getElementById('f-email').value.trim();
+            var phone = document.getElementById('f-phone').value.trim();
+            var hasBeds = state.beds.length > 0;
+            var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            document.getElementById('btn-submit').disabled = !(name && emailOk && phone && hasBeds);
+        }
+
+        function setDrawingActive(active) {
+            state.isDrawing = active;
+            document.getElementById('btn-draw').classList.toggle('active', active);
+        }
+
+        /* ═══════ Photos ═══════ */
+
+        function handlePhotos(files) {
+            Array.from(files).forEach(function (file) {
+                if (!file.type.startsWith('image/')) return;
+                state.photos.push({ file: file, url: URL.createObjectURL(file), name: file.name });
             });
-    });
+            renderPhotos();
+        }
+
+        function removePhoto(i) {
+            URL.revokeObjectURL(state.photos[i].url);
+            state.photos.splice(i, 1);
+            renderPhotos();
+        }
+
+        function renderPhotos() {
+            var g = document.getElementById('photo-gallery');
+            g.innerHTML = state.photos.map(function (p, i) {
+                return '<div class="quote-photo-thumb"><img src="' + p.url + '" alt="' + p.name + '"><button class="quote-photo-thumb-x" onclick="removePhoto(' + i + ')">&times;</button></div>';
+            }).join('');
+        }
+
+        /* ═══════ Submit ═══════ */
+
+        async function submitQuote() {
+            var btn = document.getElementById('btn-submit');
+            btn.classList.add('loading');
+            btn.disabled = true;
+
+            var name = document.getElementById('f-name').value.trim();
+            var email = document.getElementById('f-email').value.trim();
+            var phone = document.getElementById('f-phone').value.trim();
+            var material = document.getElementById('f-material').value;
+            var mulchSelect = document.getElementById('f-mulch-type');
+            var rockSelect = document.getElementById('f-rock-type');
+            var mulchType = material === 'rock'
+                ? rockSelect.options[rockSelect.selectedIndex].text
+                : mulchSelect.options[mulchSelect.selectedIndex].text;
+            var prevYards = parseFloat(document.getElementById('f-prev-yards').value) || 0;
+            var sqft = getTotalSqFt();
+            var calculatedYards = getCalculatedYards();
+            var yards = getTotalYards();
+            var price = getTotalPrice();
+            var bedNames = state.beds.map(function (b) { return b.name; });
+            var wasAdjusted = prevYards > 0 && prevYards > calculatedYards * 1.25;
+
+            try {
+                // Create contact
+                var contactRes = await fetch('/api/contacts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        address1: state.address,
+                        tags: CONFIG.ghlTags,
+                        customField: {
+                            bed_names: bedNames.join(', '),
+                            total_square_feet: Math.round(sqft).toString(),
+                            total_cubic_yards: yards.toFixed(2),
+                            mulch_depth: state.selectedDepth + '"',
+                            mulch_type: mulchType,
+                            quote_amount: Math.round(price).toString(),
+                            property_address: state.address,
+                            last_service_date: new Date().toISOString().split('T')[0],
+                        },
+                    }),
+                });
+                var contactResult = await contactRes.json();
+                var contactId = contactResult && contactResult.contact && contactResult.contact.id;
+
+                if (contactId) {
+                    // Add note
+                    var noteLines = [
+                        'Virtual Mulch Quote — ' + new Date().toLocaleDateString(),
+                        'Address: ' + state.address,
+                        'Mulch Type: ' + mulchType,
+                        'Depth: ' + state.selectedDepth + '"',
+                        '',
+                    ];
+                    state.beds.forEach(function (bed) {
+                        var bedYards = bed.sqft / CONFIG.sqftPerYard;
+                        noteLines.push(bed.name + ': ' + Math.round(bed.sqft) + ' sq ft → ' + bedYards.toFixed(2) + ' yds');
+                    });
+                    if (prevYards > 0) {
+                        noteLines.push('Previous order: ' + prevYards + ' yds');
+                        noteLines.push('Satellite estimate: ' + calculatedYards.toFixed(2) + ' yds');
+                        if (wasAdjusted) noteLines.push('→ Adjusted to previous order amount (' + prevYards + ' yds)');
+                    }
+                    noteLines.push('', 'Total: ' + Math.round(sqft) + ' sq ft, ' + yards.toFixed(2) + ' cubic yards', 'Quote: $' + Math.round(price));
+
+                    await fetch('/api/contacts/' + contactId + '/notes', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ body: noteLines.join('\n') }),
+                    });
+
+                    // Upload photos
+                    for (var pi = 0; pi < state.photos.length; pi++) {
+                        var fd = new FormData();
+                        fd.append('file', state.photos[pi].file);
+                        await fetch('/api/media/upload', { method: 'POST', body: fd });
+                    }
+
+                    // Send email
+                    var firstName = name.split(' ')[0] || 'there';
+                    var bedLines = state.beds.map(function (b) {
+                        var bYards = b.sqft / CONFIG.sqftPerYard;
+                        return '  • ' + b.name + ': ' + Math.round(b.sqft) + ' sq ft — ' + bYards.toFixed(1) + ' cubic yards';
+                    }).join('\n');
+
+                    var emailMsg = 'Hi ' + firstName + ',\n\nThanks for requesting a mulch quote from Mulch Bros! Here\'s your estimate:\n\n📍 Property: ' + state.address + '\n\n🌿 Mulch Details:\n  Type: ' + mulchType + '\n  Depth: ' + state.selectedDepth + ' inches\n\n📐 Bed Breakdown:\n' + bedLines + '\n\n📊 Summary:\n  Total Area: ' + Math.round(sqft).toLocaleString() + ' sq ft\n  Material Needed: ' + yards.toFixed(1) + ' cubic yards\n  Rate: $' + CONFIG.pricePerYard + ' per cubic yard\n\n💰 Estimated Total: $' + Math.round(price).toLocaleString() + '\n\nThis is an estimate based on satellite measurements. Final pricing may vary based on site conditions.\n\nReady to schedule? Reply to this message or call us at (262) 613-7406!\n\n— Mulch Bros';
+
+                    await fetch('/api/conversations/messages', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ type: 'Email', contactId: contactId, message: emailMsg }),
+                    });
+
+                    // SMS
+                    if (phone) {
+                        var smsText = 'Hi ' + firstName + '! Your Mulch Bros estimate: ' + mulchType + ', ' + yards.toFixed(1) + ' cubic yards, ~$' + Math.round(price) + '. Check your email for the full breakdown!';
+                        await fetch('/api/conversations/messages', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ type: 'SMS', contactId: contactId, message: smsText }),
+                        });
+                    }
+
+                    // Pipeline opportunity
+                    if (CONFIG.ghlPipelineId && CONFIG.ghlStageId) {
+                        await fetch('/api/opportunities', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                pipelineId: CONFIG.ghlPipelineId,
+                                pipelineStageId: CONFIG.ghlStageId,
+                                contactId: contactId,
+                                name: 'Virtual Mulch Quote — ' + name,
+                                monetaryValue: Math.round(price),
+                            }),
+                        });
+                    }
+                }
+
+                // Show success
+                document.getElementById('success-msg').textContent =
+                    'We sent your estimate to ' + email + (phone ? ' and texted a summary to your phone' : '') + '. A team member will be in touch soon!';
+                document.getElementById('success-overlay').hidden = false;
+
+            } catch (err) {
+                showToast('Something went wrong. Please try again.', 'error');
+                console.error(err);
+            }
+
+            btn.classList.remove('loading');
+            btn.disabled = false;
+        }
+
+        /* ═══════ Reset ═══════ */
+
+        function resetAll() {
+            clearAllBeds();
+            state.photos.forEach(function (p) { URL.revokeObjectURL(p.url); });
+            state.photos = [];
+            state.address = '';
+            state.selectedDepth = CONFIG.defaultDepth;
+
+            document.getElementById('f-name').value = '';
+            document.getElementById('f-email').value = '';
+            document.getElementById('f-phone').value = '';
+            document.getElementById('f-prev-yards').value = '';
+            document.getElementById('prev-yards-note').hidden = true;
+            document.getElementById('address-input').value = '';
+            document.getElementById('photo-gallery').innerHTML = '';
+
+            var select = document.getElementById('f-mulch-type');
+            if (select.options.length) select.selectedIndex = 0;
+
+            if (state.map) {
+                state.map.setCenter(CONFIG.defaultMapCenter);
+                state.map.setZoom(CONFIG.defaultMapZoom);
+            }
+
+            updateUI();
+            updateHint('Enter your address above, then use <strong>Draw Bed</strong> to outline each mulch area.');
+            document.getElementById('success-overlay').hidden = true;
+        }
+
+        /* ═══════ Toast ═══════ */
+
+        function showToast(message, type) {
+            type = type || 'info';
+            var c = document.getElementById('toast-container');
+            var t = document.createElement('div');
+            t.className = 'quote-toast quote-toast-' + type;
+            t.textContent = message;
+            c.appendChild(t);
+            setTimeout(function () {
+                t.style.opacity = '0';
+                t.style.transition = '300ms ease';
+                setTimeout(function () { t.remove(); }, 300);
+            }, 3500);
+        }
+
+        /* ═══════ Init ═══════ */
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Populate mulch type dropdown
+            var select = document.getElementById('f-mulch-type');
+            CONFIG.mulchTypes.forEach(function (t, i) {
+                var opt = document.createElement('option');
+                opt.value = t.id;
+                opt.textContent = t.name;
+                if (i === 0) opt.selected = true;
+                select.appendChild(opt);
+            });
+            state.selectedMulchType = CONFIG.mulchTypes[0] && CONFIG.mulchTypes[0].id;
+
+            // Populate rock type dropdown
+            var rockSelect = document.getElementById('f-rock-type');
+            CONFIG.rockTypes.forEach(function (t, i) {
+                var opt = document.createElement('option');
+                opt.value = t.id;
+                opt.textContent = t.name;
+                if (i === 0) opt.selected = true;
+                rockSelect.appendChild(opt);
+            });
+
+            // Material toggle
+            document.getElementById('f-material').addEventListener('change', function (e) {
+                var isRock = e.target.value === 'rock';
+                document.getElementById('mulch-type-field').hidden = isRock;
+                document.getElementById('rock-type-field').hidden = !isRock;
+            });
+
+            // Address search
+            document.getElementById('btn-search').addEventListener('click', function () {
+                var val = document.getElementById('address-input').value.trim();
+                if (!val) return;
+
+                var selectedPlace = state.autocomplete.getPlace();
+                if (selectedPlace && selectedPlace.geometry) {
+                    state.address = selectedPlace.formatted_address || val;
+                    state.map.setCenter(selectedPlace.geometry.location);
+                    state.map.setZoom(20);
+                    updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
+                    return;
+                }
+
+                var acService = new google.maps.places.AutocompleteService();
+                acService.getPlacePredictions(
+                    { input: val, types: ['address'], componentRestrictions: { country: CONFIG.country } },
+                    function (predictions, status) {
+                        if (status !== google.maps.places.PlacesServiceStatus.OK || !predictions || !predictions.length) {
+                            showToast('Address not found. Try a more specific address.', 'error');
+                            return;
+                        }
+                        var placeId = predictions[0].place_id;
+                        var placesService = new google.maps.places.PlacesService(state.map);
+                        placesService.getDetails({ placeId: placeId, fields: ['formatted_address', 'geometry'] }, function (place, detailStatus) {
+                            if (detailStatus === google.maps.places.PlacesServiceStatus.OK && place.geometry) {
+                                state.address = place.formatted_address || val;
+                                document.getElementById('address-input').value = place.formatted_address || val;
+                                state.map.setCenter(place.geometry.location);
+                                state.map.setZoom(20);
+                                updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
+                            } else {
+                                showToast('Address not found. Try a more specific address.', 'error');
+                            }
+                        });
+                    }
+                );
+            });
+
+            document.getElementById('address-input').addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') { e.preventDefault(); document.getElementById('btn-search').click(); }
+            });
+
+            // Drawing tools
+            document.getElementById('btn-draw').addEventListener('click', function () {
+                if (state.isDrawing) {
+                    state.drawingManager.setDrawingMode(null);
+                    setDrawingActive(false);
+                } else {
+                    var nextColor = BED_COLORS[state.bedCounter % BED_COLORS.length];
+                    state.drawingManager.setOptions({
+                        polygonOptions: {
+                            fillColor: nextColor, fillOpacity: 0.3,
+                            strokeColor: nextColor, strokeWeight: 2,
+                            editable: true, draggable: false,
+                        },
+                    });
+                    state.drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
+                    setDrawingActive(true);
+                    updateHint('Tap the corners of a mulch bed on the map. Tap the first point to close the shape.');
+                }
+            });
+
+            document.getElementById('btn-undo').addEventListener('click', removeLastBed);
+            document.getElementById('btn-clear').addEventListener('click', function () {
+                if (state.beds.length > 0) clearAllBeds();
+            });
+
+            // Photos
+            var photoDrop = document.getElementById('photo-drop');
+            var photoInput = document.getElementById('photo-input');
+            photoDrop.addEventListener('click', function () { photoInput.click(); });
+            photoDrop.addEventListener('dragover', function (e) { e.preventDefault(); photoDrop.style.borderColor = 'var(--primary-orange)'; });
+            photoDrop.addEventListener('dragleave', function () { photoDrop.style.borderColor = ''; });
+            photoDrop.addEventListener('drop', function (e) { e.preventDefault(); photoDrop.style.borderColor = ''; handlePhotos(e.dataTransfer.files); });
+            photoInput.addEventListener('change', function () { handlePhotos(photoInput.files); photoInput.value = ''; });
+
+            // Previous yards
+            document.getElementById('f-prev-yards').addEventListener('input', function () {
+                checkPreviousYards();
+                updateUI();
+            });
+
+            // Form validation
+            ['f-name', 'f-email', 'f-phone'].forEach(function (id) {
+                document.getElementById(id).addEventListener('input', validateSubmit);
+            });
+
+            // Submit
+            document.getElementById('btn-submit').addEventListener('click', submitQuote);
+
+            // New quote
+            document.getElementById('btn-new-quote').addEventListener('click', resetAll);
+
+            // Load Google Maps API key from server
+            fetch('/api/config')
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    if (data.googleMapsKey) {
+                        var s = document.createElement('script');
+                        s.async = true;
+                        s.src = 'https://maps.googleapis.com/maps/api/js?key=' + data.googleMapsKey + '&libraries=drawing,geometry,places&callback=initMap';
+                        document.head.appendChild(s);
+                    } else {
+                        document.getElementById('map-loading').innerHTML = '<span style="color: #dc2626;">Google Maps API key not configured. Please contact support.</span>';
+                    }
+                })
+                .catch(function () {
+                    document.getElementById('map-loading').innerHTML = '<span style="color: #dc2626;">Could not connect to server. Please try again later.</span>';
+                });
+        });
     </script>
 </body>
 
