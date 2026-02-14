@@ -697,9 +697,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="quote.html" class="nav-cta" style="background: var(--primary-orange); color: var(--cream) !important;">Virtual Quote</a></li>
-                <li><a href="https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB" class="nav-cta" onclick="return gtag_report_conversion('https://api.leadconnectorhq.com/widget/group/MIftAUwyicyBk8JjtHgB')">Free
-                        Quote</a></li>
+                <li><a href="get-quote.html" class="nav-cta">Free Quote</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -1490,22 +1488,11 @@
         // New quote
         document.getElementById('btn-new-quote').addEventListener('click', resetAll);
 
-        // Load Google Maps API key from server
-        fetch('/api/config')
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (data.googleMapsKey) {
-                    var s = document.createElement('script');
-                    s.async = true;
-                    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + data.googleMapsKey + '&libraries=drawing,geometry,places&callback=initMap';
-                    document.head.appendChild(s);
-                } else {
-                    document.getElementById('map-loading').innerHTML = '<span style="color: #dc2626;">Google Maps API key not configured. Please contact support.</span>';
-                }
-            })
-            .catch(function() {
-                document.getElementById('map-loading').innerHTML = '<span style="color: #dc2626;">Could not connect to server. Please try again later.</span>';
-            });
+        // Load Google Maps
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBuPZE8IVq1MI46h6oKRV1cBYCP6HLhJyo&libraries=drawing,geometry,places&callback=initMap';
+        document.head.appendChild(s);
     });
     </script>
 </body>
