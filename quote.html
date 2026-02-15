@@ -1324,6 +1324,7 @@
                         tags: CONFIG.ghlTags,
                         customField: {
                             bed_names: bedNames.join(', '),
+                            bed_count: state.beds.length.toString(),
                             total_square_feet: Math.round(sqft).toString(),
                             total_cubic_yards: yards.toFixed(2),
                             mulch_depth: state.selectedDepth + '"',
