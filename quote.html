@@ -1061,6 +1061,9 @@
             selectedDepth: CONFIG.defaultDepth,
             selectedMulchType: null,
             address: '',
+            city: '',
+            addressState: '',
+            postalCode: '',
             isDrawing: false,
         };
 
@@ -1068,6 +1071,17 @@
             '#FF9700', '#00DE83', '#3b82f6', '#dc2626',
             '#7c3aed', '#db2777', '#0d9488', '#ea580c'
         ];
+
+        /* ═══════ Address Parsing ═══════ */
+
+        function parseAddressComponents(place) {
+            if (!place || !place.address_components) return;
+            place.address_components.forEach(function (c) {
+                if (c.types.indexOf('locality') !== -1) state.city = c.long_name;
+                if (c.types.indexOf('administrative_area_level_1') !== -1) state.addressState = c.short_name;
+                if (c.types.indexOf('postal_code') !== -1) state.postalCode = c.long_name;
+            });
+        }
 
         /* ═══════ Google Maps ═══════ */
 
@@ -1117,9 +1131,11 @@
                 var place = state.autocomplete.getPlace();
                 if (place && place.geometry) {
                     state.address = place.formatted_address || input.value;
+                    parseAddressComponents(place);
                     state.map.setCenter(place.geometry.location);
                     state.map.setZoom(20);
                     updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
+                    validateSubmit();
                 }
             });
         }
@@ -1320,6 +1336,9 @@
                         email: email,
                         phone: phone,
                         address1: state.address,
+                        city: state.city,
+                        state: state.addressState,
+                        postalCode: state.postalCode,
                         source: 'Virtual Quote Tool',
                         tags: CONFIG.ghlTags,
                         customField: {
@@ -1523,9 +1542,11 @@
                 var selectedPlace = state.autocomplete.getPlace();
                 if (selectedPlace && selectedPlace.geometry) {
                     state.address = selectedPlace.formatted_address || val;
+                    parseAddressComponents(selectedPlace);
                     state.map.setCenter(selectedPlace.geometry.location);
                     state.map.setZoom(20);
                     updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
+                    validateSubmit();
                     return;
                 }
 
@@ -1539,13 +1560,15 @@
                         }
                         var placeId = predictions[0].place_id;
                         var placesService = new google.maps.places.PlacesService(state.map);
-                        placesService.getDetails({ placeId: placeId, fields: ['formatted_address', 'geometry'] }, function (place, detailStatus) {
+                        placesService.getDetails({ placeId: placeId, fields: ['formatted_address', 'geometry', 'address_components'] }, function (place, detailStatus) {
                             if (detailStatus === google.maps.places.PlacesServiceStatus.OK && place.geometry) {
                                 state.address = place.formatted_address || val;
+                                parseAddressComponents(place);
                                 document.getElementById('address-input').value = place.formatted_address || val;
                                 state.map.setCenter(place.geometry.location);
                                 state.map.setZoom(20);
                                 updateHint('Property found! Use <strong>Draw Bed</strong> to outline each mulch area.');
+                                validateSubmit();
                             } else {
                                 showToast('Address not found. Try a more specific address.', 'error');
                             }
