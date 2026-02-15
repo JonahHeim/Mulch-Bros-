@@ -1251,10 +1251,11 @@
             var name = document.getElementById('f-name').value.trim();
             var email = document.getElementById('f-email').value.trim();
             var phone = document.getElementById('f-phone').value.trim();
+            var hasAddress = state.address.trim().length > 0;
             var hasBeds = state.beds.length > 0;
             var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-            document.getElementById('btn-submit').disabled = !(name && emailOk && phone && hasBeds);
+            document.getElementById('btn-submit').disabled = !(name && emailOk && phone && hasAddress && hasBeds);
         }
 
         function setDrawingActive(active) {
@@ -1323,11 +1324,12 @@
                         tags: CONFIG.ghlTags,
                         customField: {
                             bed_names: bedNames.join(', '),
+                            bed_count: state.beds.length.toString(),
                             total_square_feet: Math.round(sqft).toString(),
                             total_cubic_yards: yards.toFixed(2),
                             mulch_depth: state.selectedDepth + '"',
                             mulch_type: mulchType,
-                            quote_amount: Math.round(price).toString(),
+                            quote_amount: '$' + Math.round(price).toLocaleString(),
                             property_address: state.address,
                             quote_type: 'Virtual Quote',
                         },
