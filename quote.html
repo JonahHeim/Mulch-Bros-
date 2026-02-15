@@ -1324,14 +1324,16 @@
                         tags: CONFIG.ghlTags,
                         customField: {
                             bed_names: bedNames.join(', '),
-                            bed_count: state.beds.length.toString(),
                             total_square_feet: Math.round(sqft).toString(),
                             total_cubic_yards: yards.toFixed(2),
                             mulch_depth: state.selectedDepth + '"',
                             mulch_type: mulchType,
                             quote_amount: '$' + Math.round(price).toLocaleString(),
+                            quote_price: Math.round(price).toString(),
+                            yardage: yards.toFixed(2),
                             property_address: state.address,
                             quote_type: 'Virtual Quote',
+                            lead_source: 'Virtual Quote Tool',
                         },
                     }),
                 });
