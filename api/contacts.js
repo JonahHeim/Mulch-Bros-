@@ -10,29 +10,33 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'GHL API key not configured' });
   }
 
+  if (!GHL_LOCATION_ID) {
+    return res.status(500).json({ error: 'GHL location ID not configured' });
+  }
+
   try {
     const body = req.body;
 
     const ghlBody = {
+      locationId: GHL_LOCATION_ID,
       firstName: body.name ? body.name.split(' ')[0] : '',
       lastName: body.name ? body.name.split(' ').slice(1).join(' ') : '',
       email: body.email,
       phone: body.phone,
       address1: body.address1,
+      source: body.source || 'Virtual Quote Tool',
       tags: body.tags || [],
       customFields: [],
     };
 
-    if (GHL_LOCATION_ID) {
-      ghlBody.locationId = GHL_LOCATION_ID;
-    }
-
     // Convert customField object to customFields array
     if (body.customField) {
       for (const [key, value] of Object.entries(body.customField)) {
-        ghlBody.customFields.push({ id: key, field_value: value });
+        ghlBody.customFields.push({ key: key, field_value: value });
       }
     }
+
+    console.log('Sending to GHL:', JSON.stringify(ghlBody, null, 2));
 
     const response = await fetch('https://services.leadconnectorhq.com/contacts/', {
       method: 'POST',
@@ -45,9 +49,15 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
-    res.status(response.ok ? 200 : response.status).json(data);
+    console.log('GHL response:', response.status, JSON.stringify(data));
+
+    if (!response.ok) {
+      return res.status(response.status).json({ error: data.message || data.msg || JSON.stringify(data), ghlStatus: response.status });
+    }
+
+    res.status(200).json(data);
   } catch (err) {
     console.error('GHL contacts error:', err);
-    res.status(500).json({ error: 'Failed to create contact' });
+    res.status(500).json({ error: 'Failed to create contact: ' + err.message });
   }
 }

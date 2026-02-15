@@ -1319,6 +1319,7 @@
                         email: email,
                         phone: phone,
                         address1: state.address,
+                        source: 'Virtual Quote Tool',
                         tags: CONFIG.ghlTags,
                         customField: {
                             bed_names: bedNames.join(', '),
@@ -1328,11 +1329,20 @@
                             mulch_type: mulchType,
                             quote_amount: Math.round(price).toString(),
                             property_address: state.address,
-                            last_service_date: new Date().toISOString().split('T')[0],
+                            quote_type: 'Virtual Quote',
                         },
                     }),
                 });
                 var contactResult = await contactRes.json();
+                console.log('GHL contact response:', contactRes.status, contactResult);
+
+                if (!contactRes.ok) {
+                    showToast('Error creating contact: ' + (contactResult.error || contactRes.status), 'error');
+                    btn.classList.remove('loading');
+                    btn.disabled = false;
+                    return;
+                }
+
                 var contactId = contactResult && contactResult.contact && contactResult.contact.id;
 
                 if (contactId) {
