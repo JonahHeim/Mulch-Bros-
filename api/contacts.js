@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     // Convert customField object to customFields array
     if (body.customField) {
       for (const [key, value] of Object.entries(body.customField)) {
-        ghlBody.customFields.push({ key: key, field_value: value });
+        ghlBody.customFields.push({ id: key, field_value: value });
       }
     }
 
